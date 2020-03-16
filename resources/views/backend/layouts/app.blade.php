@@ -49,7 +49,7 @@
 <body class="app header-fixed sidebar-fixed aside-menu-off-canvas sidebar-lg-show">
     @include('backend.includes.header')
 
-    <div class="app-body">
+    <div class="app-body" id="app" > 
         @include('backend.includes.sidebar')
 
         <main class="main">

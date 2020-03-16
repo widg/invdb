@@ -16,4 +16,8 @@ class DashboardController extends Controller
     {
         return view('backend.dashboard');
     }
+    public function cisco()
+    {
+        return view('backend.cisco.index');
+    }
 }

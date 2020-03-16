@@ -12,6 +12,34 @@
                     @lang('menus.backend.sidebar.dashboard')
                 </a>
             </li>
+            {{--CISCO--}}
+            <li class="nav-item nav-dropdown {{
+                    active_class(Route::is('admin/cisco*'), 'open')
+                }}">
+                    <a class="nav-link nav-dropdown-toggle {{
+                        active_class(Route::is('admin/cisco*'))
+                    }}" href="#">
+                    <i class="nav-icon fas fa-network-wired"></i> cisco
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{
+                        active_class(Route::is('admin/cisco'))
+                    }}" href="{{ route('admin.cisco') }}">
+                            Таблица
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{
+                        active_class(Route::is('admin/cisco/logs*'))
+                    }}" href="/{{-- route('admin.cisco') --}}">
+                            Конфигуратор
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{--END CISCO--}}
 
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">

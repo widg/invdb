@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Api\V1\CityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Http\Request;
 /*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });*/
+Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
+    Route::resource('city', 'CityController', ['except' => ['create', 'edit',]]);
+    Route::get('all', [CityController::class, 'all'])->name('cisco');
+    Route::resource('cisco', 'CiscoController', ['except' => ['create', 'edit',]]);
+});
